@@ -1,73 +1,224 @@
-# Welcome to your Lovable project
+# 🚀 VyomGarud – Military-Grade UAV Systems Website
 
-## Project info
+A modern, fully-animated, high-performance web application built for **VyomGarud**, showcasing advanced UAV capabilities, mission performance, and contact workflows with email integration.
 
-**URL**: https://lovable.dev/projects/8e67fbd8-d37c-4005-87cc-05e70adb08de
+Designed with **glassmorphism**, **smooth reveal animations**, **AI-driven visuals**, and a **modern tech stack**.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🛰️ Features
 
-**Use Lovable**
+### 🎨 Frontend
+- Fully responsive UI (mobile → tablet → desktop)
+- Hero section with animated text reveal
+- Smooth scroll-based animations (custom hook)
+- Modern glassmorphism UI components
+- Stats with animated counters
+- Dynamic highlights & capabilities sections
+- Contact form with:
+  - Toast notification  
+  - Success modal  
+  - Email sending capability  
+- Modern footer with branding & quick links
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8e67fbd8-d37c-4005-87cc-05e70adb08de) and start prompting.
+### 📩 Backend
+- Node.js + Express API
+- Email sending using **Nodemailer**
+- Auto-reply email to the user
+- Admin email notification with message details
+- Integrated with Vite using **vite-express**
+- Strong HTML email templates
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🛠️ Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Frontend
+- **React + TypeScript**
+- **Vite**
+- **TailwindCSS**
+- **Lucide Icons**
+- Reusable UI components
+- Custom scroll-reveal animations
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Backend
+- **Node.js / Express**
+- **vite-express** (Frontend + Backend in one server)
+- **Nodemailer**
+- Gmail App Password (secure email sending)
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📁 Project Structure
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+```
+vista-reveal-animations-main/
+│
+├── public/
+│   ├── favicon.png
+│   └── placeholder.svg
+│
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── ui/
+│   │   ├── Navbar.tsx
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Capabilities.tsx
+│   │   ├── Highlights.tsx
+│   │   ├── Contact.tsx
+│   │   └── Footer.tsx
+│   │
+│   ├── hooks/
+│   │   └── useScrollReveal.ts
+│   │
+│   ├── lib/
+│   │   └── send-email.js   (Not used in latest version)
+│   │
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+│
+├── server.js
+├── package.json
+└── README.md
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## ⚙️ Installation & Setup
+
+### 1️⃣ Install Dependencies
+```
+npm install
+```
+
+### 2️⃣ Start Fullstack Server (Frontend + Backend Together)
+
+```
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+This runs:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Vite React Frontend
+- Express Backend
+- Nodemailer API at:  
+  ```
+  POST /api/send-email
+  ```
 
-**Use GitHub Codespaces**
+### 3️⃣ Build for Production
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+npm run build
+```
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 📩 Email API Documentation
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### **Endpoint**
+```
+POST /api/send-email
+```
 
-## How can I deploy this project?
+### **Request Body**
+```json
+{
+  "name": "John Doe",
+  "email": "john@mail.com",
+  "organization": "Company",
+  "message": "Hello!"
+}
+```
 
-Simply open [Lovable](https://lovable.dev/projects/8e67fbd8-d37c-4005-87cc-05e70adb08de) and click on Share -> Publish.
+### **Response**
+| Status | Meaning |
+|--------|---------|
+| `200` | Email sent successfully |
+| `400` | Missing fields |
+| `500` | Internal email error |
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 📬 Email Templates
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### ✔ Admin Email Includes:
+- Name  
+- Email  
+- Organization  
+- Message body  
+- Timestamp  
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### ✔ User Auto-Reply Email Includes:
+- Greeting with user's name  
+- Confirmation message  
+- Message preview  
+- VyomGarud signature  
+
+---
+
+## 🚀 Deployment Instructions
+
+### **Deploy on VPS / Linux**
+```
+npm install
+npm run build
+node server.js
+```
+
+### **Deploy on Render / Railway / VPS**
+Make sure:
+- Port is exposed through Express
+- Gmail App password is added securely
+- Build command:
+  ```
+  npm run build
+  ```
+- Start command:
+  ```
+  node server.js
+  ```
+
+---
+
+## 🎥 Screenshots (Add your images here)
+
+```
+./screenshots/hero.png
+./screenshots/highlights.png
+./screenshots/contact-form.png
+./screenshots/email-preview.png
+```
+
+---
+
+## 👨‍💻 Developer Notes
+- Animations controlled by `useScrollReveal`
+- Counter animations use `easeOutCubic`
+- Contact form uses native fetch for backend communication
+- All assets are optimized for performance
+- Replace `favicon.png` with your drone logo for brand identity
+
+---
+
+## 📄 License
+This project is **private** and belongs to **VyomGarud UAV Systems**.  
+Do not redistribute without authorization.
+
+---
+
+## 🌐 Author / Maintainer
+**Shaik Nagoor Saheb**  
+VyomGarud UAV Systems  
+📧 contact@vyomgarud.com
+
+---
+
+If you want:
+✅ Add GIFs / demo images  
+✅ Add CI/CD deploy script  
+✅ Add API validation with Zod  
+Just tell me — I can extend the README further!
