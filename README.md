@@ -94,69 +94,13 @@ vista-reveal-animations-main/
 npm install
 ```
 
-### 2️⃣ Start Fullstack Server (Frontend + Backend Together)
-
-```
-npm run dev
-```
-
-This runs:
-
-- Vite React Frontend
-- Express Backend
-- Nodemailer API at:  
-  ```
-  POST /api/send-email
-  ```
-
-### 3️⃣ Build for Production
 
 ```
 npm run build
 ```
 
----
 
-## 📩 Email API Documentation
 
-### **Endpoint**
-```
-POST /api/send-email
-```
-
-### **Request Body**
-```json
-{
-  "name": "John Doe",
-  "email": "john@mail.com",
-  "organization": "Company",
-  "message": "Hello!"
-}
-```
-
-### **Response**
-| Status | Meaning |
-|--------|---------|
-| `200` | Email sent successfully |
-| `400` | Missing fields |
-| `500` | Internal email error |
-
----
-
-## 📬 Email Templates
-
-### ✔ Admin Email Includes:
-- Name  
-- Email  
-- Organization  
-- Message body  
-- Timestamp  
-
-### ✔ User Auto-Reply Email Includes:
-- Greeting with user's name  
-- Confirmation message  
-- Message preview  
-- VyomGarud signature  
 
 ---
 
@@ -169,31 +113,8 @@ npm run build
 node server.js
 ```
 
-### **Deploy on Render / Railway / VPS**
-Make sure:
-- Port is exposed through Express
-- Gmail App password is added securely
-- Build command:
   ```
-  npm run build
-  ```
-- Start command:
-  ```
-  node server.js
-  ```
-
----
-
-## 🎥 Screenshots (Add your images here)
-
-```
-./screenshots/hero.png
-./screenshots/highlights.png
-./screenshots/contact-form.png
-./screenshots/email-preview.png
-```
-
----
+  n
 
 ## 👨‍💻 Developer Notes
 - Animations controlled by `useScrollReveal`
